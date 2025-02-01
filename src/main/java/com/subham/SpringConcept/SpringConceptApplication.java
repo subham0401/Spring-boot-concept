@@ -6,15 +6,26 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-@SpringBootApplication
+@SpringBootApplication  // This annotation marks the class as a Spring Boot application
 public class SpringConceptApplication {
 
 	public static void main(String[] args) {
-		/*ApplicationContext this is the return of run method  and by this object we can obtain the required bean id found*/
+		/*
+		 * SpringApplication.run() starts the Spring Boot application and
+		 * returns an ApplicationContext object, which is a container for beans.
+		 */
 		ApplicationContext context = SpringApplication.run(SpringConceptApplication.class, args);
-		Dev obj=(Dev)context.getBean(Dev.class);
+
+		/*
+		 * The context.getBean() method is used to fetch the required bean (Dev class object).
+		 * Spring automatically manages the object creation using Dependency Injection.
+		 */
+		Dev obj = (Dev) context.getBean(Dev.class);
+
+		/*
+		 * Calling the method on the Dev object.
+		 * If there is an issue in wiring the beans, this call might fail.
+		 */
 		obj.callLaptop();
-
 	}
-
 }
