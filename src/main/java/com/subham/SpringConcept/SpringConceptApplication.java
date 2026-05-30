@@ -13,6 +13,7 @@ public class SpringConceptApplication {
 		/*ApplicationContext this is the return of run method  and by this object we can obtain the required bean id found*/
 		ApplicationContext context = SpringApplication.run(SpringConceptApplication.class, args);
 		Dev obj=(Dev)context.getBean(Dev.class);
+        System.out.println("subham ");
 		obj.callLaptop();
 
 	}
